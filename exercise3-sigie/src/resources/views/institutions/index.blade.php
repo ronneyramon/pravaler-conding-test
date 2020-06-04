@@ -29,7 +29,7 @@
                                     <td>{{$institution->name}}</td>
                                     <td>{{$institution->cnpj}}</td>
                                     <td>{{$institution->status}}</td>
-                                    <td><a href="/institutions/{{$institution->id}}">Editar</a></td>
+                                    <td><a href="/institutions/{{$institution->id}}">Editar</a> | <a href="/institutions/{{$institution->id}}/courses">Cursos</a> | <a href="/institutions/{{$institution->id}}/students">Alunos</a></td>
                                 </tr>                                
 
                             @empty

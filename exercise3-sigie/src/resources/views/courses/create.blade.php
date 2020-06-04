@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <p>
+                <a href="/courses">< Voltar para a lista</a>
+            </p>
             <div class="card">
                 <div class="card-header">{{ __('Criar curso') }}</div>
 
@@ -56,19 +59,8 @@
                         <div class="form-group row">
                             <label for="institution_id" class="col-md-4 col-form-label text-md-right">{{ __('Instituição') }}</label>
                         
-                            <div class="col-md-6">
-                                
-                                <select id="institution_id" class="form-control @error('institution_id') is-invalid @enderror" name="institution_id" value="{{ old('institution_id') }}" autocomplete="off" autofocus>
-                                    <option value="">Selecione</option>
-                                    @foreach ($institutions as $institution)
-                                        <option value="{{$institution->id}}">{{$institution->name}}</option>
-                                    @endforeach
-                                </select>
-                                @error('institution_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="col-md-6">                                
+                                @include('courses.select_institution')
                             </div>
                         </div>
                         <div class="offset-md-4 col-md-6">

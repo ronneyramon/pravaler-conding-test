@@ -24,6 +24,8 @@ Route::post('/institutions','InstitutionController@store');
 Route::get('/institutions/{institution}','InstitutionController@edit');
 Route::patch('/institutions/{institution}','InstitutionController@update');
 Route::delete('/institutions/{institution}','InstitutionController@destroy');
+Route::get('/institutions/{institution}/students','InstitutionController@studentsShow');
+Route::get('/institutions/{institution}/courses','InstitutionController@coursesShow');
 
 //Students routes
 Route::get('/students','StudentController@index');
@@ -40,6 +42,7 @@ Route::post('/courses','CourseController@store');
 Route::get('/courses/{course}','CourseController@edit');
 Route::patch('/courses/{course}','CourseController@update');
 Route::delete('/courses/{course}','CourseController@destroy');
+Route::get('/courses/{course}/students','CourseController@studentsShow');
 
 
 Auth::routes(['register' => false]);

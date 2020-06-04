@@ -46,7 +46,7 @@ class InstitutionController extends Controller
 
         $institution = \App\Institution::create($data);       
 
-        return redirect('institutions/'.$institution->id);
+        return redirect('institutions/'.$institution->id)->with('message','Instituição criada com sucesso.');
     }
 
     /**
@@ -73,7 +73,7 @@ class InstitutionController extends Controller
 
         $institution->update($data);
 
-        return redirect('institutions');
+        return redirect('institutions')->with('message','Instituição salva com sucesso.');
     }
 
     /**
@@ -92,11 +92,19 @@ class InstitutionController extends Controller
         return redirect('institutions');
     }
 
+    public function studentsShow(Institution $institution){
+        return view('institutions.students.index', compact('institution'));
+    }
+
+    public function coursesShow(Institution $institution){
+        return view('institutions.courses.index', compact('institution'));
+    }
+
     private function validatedData($institution = null){
         return request()->validate(
             [
                 'name' => ['required', 'string', 'max:255'],
-                'cnpj' => ['required', 'string', 'max:14', Rule::unique('institutions')->ignore($institution)],
+                'cnpj' => ['required', 'string', 'max:14', 'cnpj', Rule::unique('institutions')->ignore($institution)],
                 'status' => ['required', Rule::in(['active', 'inactive'])]
             ]
         );

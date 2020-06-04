@@ -32,7 +32,7 @@ class CourseController extends Controller
     public function create()
     {
         $institutions = \App\Institution::all();
-        return view('courses.create', compact('institutions'));
+        return view('courses.create', compact('institutions'))->with('message','Curso criado com sucesso.');
     }
 
     /**
@@ -75,7 +75,7 @@ class CourseController extends Controller
 
         $course->update($data);
 
-        return redirect('courses');
+        return redirect('courses')->with('message','Curso salvo com sucesso.');
     }
 
     /**
@@ -94,7 +94,11 @@ class CourseController extends Controller
         
         $course->delete();
 
-        return \redirect('courses');
+        return redirect('courses');
+    }
+
+    public function studentsShow(Course $course){
+        return view('courses.students.index', compact('course'));
     }
 
     private function validatedData($course = null){

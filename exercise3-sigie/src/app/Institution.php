@@ -13,6 +13,6 @@ class Institution extends Model
     }
 
     public function students(){
-        return $this->hasManyThrough(Course::class, Student::class);
+        return $this->hasManyThrough( Student::class, Course::class);
     }
 }

@@ -31,7 +31,7 @@
                                     <td>{{$course->duration_value}} {{$course->duration_type}}</td>
                                     <td>{{$course->institution ? $course->institution->name : ''}}</td>
                                     <td>{{$course->status}}</td>
-                                    <td><a href="/courses/{{$course->id}}">Editar</a></td>
+                                    <td><a href="/courses/{{$course->id}}">Editar</a> | <a href="/courses/{{$course->id}}/students">Alunos</a></td>
                                 </tr>                                
 
                             @empty

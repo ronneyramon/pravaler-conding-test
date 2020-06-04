@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <p>
+                <a href="/courses">< Voltar para a lista</a>
+            </p>
             <div class="card">
                 <div class="card-header">{{ __('Editar curso') }}</div>
 

@@ -47,7 +47,7 @@ class StudentController extends Controller
 
         $student = \App\Student::create($data);       
 
-        return redirect('students/'.$student->id);
+        return redirect('students/'.$student->id)->with('message','Aluno criado com sucesso.');
     }
 
     /**
@@ -75,7 +75,7 @@ class StudentController extends Controller
 
         $student->update($data);
 
-        return redirect('students');
+        return redirect('students')->with('message','Aluno salvo com sucesso.');
     }
 
     /**
@@ -95,7 +95,7 @@ class StudentController extends Controller
         return request()->validate(
             [
                 'name' => ['required', 'string', 'max:255'],
-                'cpf' => ['required', 'string', 'max:11', Rule::unique('students')->ignore($student)],
+                'cpf' => ['required', 'string', 'max:11', 'cpf', Rule::unique('students')->ignore($student)],
                 'birth_date' => ['required', 'date'],
                 'email' => ['required','email','max:255'],
                 'mobile_number' => ['required', 'string', 'max:255'],

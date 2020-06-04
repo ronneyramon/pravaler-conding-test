@@ -11,6 +11,16 @@ class InstitutionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('institutions')->insert([
+            'name' => 'Instituição 1',
+            'cnpj' => '90095809000137',
+            'status' => 'active',
+        ]);
+
+        DB::table('institutions')->insert([
+            'name' => 'Instituição 2',
+            'cnpj' => '48867152000112',
+            'status' => 'inactive',
+        ]);
     }
 }

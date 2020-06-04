@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <p>
+                <a href="/institutions">< Voltar para a lista</a>
+            </p>
             <div class="card">
                 <div class="card-header">{{ __('Editar instituição') }}</div>
 
@@ -30,7 +33,7 @@
                             <label for="cnpj" class="col-md-4 col-form-label text-md-right">{{ __('CNPJ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cnpj" type="text" class="form-control @error('cnpj') is-invalid @enderror" name="cnpj" value="{{ old('cnpj') ?? $institution->cnpj }}" required autocomplete="off">
+                                <input id="cnpj" type="text" class="form-control @error('cnpj') is-invalid @enderror" name="cnpj" value="{{ old('cnpj') ?? $institution->cnpj }}" required maxlength="14" autocomplete="off">
 
                                 @error('cnpj')
                                     <span class="invalid-feedback" role="alert">
