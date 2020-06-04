@@ -66,7 +66,16 @@ If you want to change the default user and password of the MySQL connection, you
 
 Open a terminal and from this cloned respository's root run `docker-compose up -d --build`. 
 
-By default, the build will generate a application key, migrate and seed the database.
+After building, you need to run the following commands to make the application be in a ready to run state.
+
+- `docker-compose run --rm artisan key:generate`
+- `docker-compose run --rm artisan migrate` (if you want to migrate the database)
+- `docker-compose run --rm artisan db:seed` (if you want to seed sample data)
+
+By defaul, the application is with user registration disabled, so you will be able to login only if you run the `seed` command above. This will create the two users bellow:
+
+- User: `carla.freitas@teste.com.br` - Password: `12345678`
+- User: `pedro.silva@teste.com.br` - Password: `12345678`
 
 Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see the app running as intended.
 
