@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  exercise3-sigie:
+    image: exercise3-sigie
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80
