@@ -1,6 +1,6 @@
 # SIGIE - Sistema de Informações para Gestão de Instituição de Ensino
 
-View [Usage](##Usage) to know how to run the application. 
+View [Usage](#Usage) to know how to run the application. 
 
 ## Demo
 
