@@ -23,7 +23,7 @@ TODO
 - [X] Inativated Courses cannot be used to register new Students.
 - [X] Institutions, Students and Courses that have associated entities cannot be deleted, just inactivated.
 
-## Funcionalidades
+## Features
 
 - [X] Institutions CRUD
 - [X] Students CRUD
